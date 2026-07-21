@@ -1,17 +1,18 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { Icon } from "../ui/Icon";
+import { Icon } from "@/components/ui/Icon";
+import styles from "./heroSection.module.css";
 
 export function HeroSection() {
   return (
-    <section className="hero-section ">
-      <div className="hero-copy">
+    <section className={styles.heroSection}>
+      <div className={styles.heroCopy}>
         <h1>Tajna baza wiedzy Studentów.</h1>
         <p>
           UniCheat to miejsce, w którym studenci dzielą sie
           notatkami,metariełami i doświadczeniami z najęć.
         </p>
 
-        <div className="hero-actions">
+        <div className={styles.heroActions}>
           <a className="primary-button" href="#start">
             Zacznij
           </a>

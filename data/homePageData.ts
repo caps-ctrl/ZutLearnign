@@ -114,3 +114,41 @@ export const benefits = [
   "Społeczność studentów, którzy mogą sobie wzajemnie pomagać",
   "Szybsze przygotowanie do zajęć i egzaminów",
 ];
+
+//StudentNetwork component
+
+export const studentCards = [
+  {
+    name: "Aktywni studenci",
+    value: "1.2k",
+    tone: "from-white via-emerald-100 to-emerald-300",
+  },
+  {
+    name: "Nowe notatki",
+    value: "340",
+    tone: "from-white via-lime-100 to-emerald-300",
+  },
+  {
+    name: "Wspólne odpowiedzi",
+    value: "89%",
+    tone: "from-white via-emerald-100 to-green-300",
+  },
+  {
+    name: "Szybka pomoc",
+    value: "24/7",
+    tone: "from-white via-lime-100 to-green-300",
+  },
+  {
+    name: "Szybka pomoc",
+    value: "24/7",
+    tone: "from-white via-emerald-100 to-emerald-300",
+  },
+];
+
+export const positions = [
+  "col-start-1",
+  "col-start-3",
+  "col-start-2",
+  "col-start-1",
+  "col-start-3",
+];

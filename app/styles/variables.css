@@ -1,0 +1,14 @@
+:root {
+  --background: #f7f9fc;
+  --foreground: #141821;
+  --muted: #667085;
+  --line: #dfe5ee;
+  --soft-line: #ebeff5;
+  --panel: #ffffff;
+  --panel-soft: #f2f6fb;
+  --blue: #256bd8;
+  --blue-dark: #1d58b7;
+  --green: #27a376;
+  --orange: #e88c37;
+  --shadow: 0 28px 80px rgba(31, 46, 77, 0.14);
+}

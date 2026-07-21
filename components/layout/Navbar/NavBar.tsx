@@ -1,8 +1,8 @@
 import { navItems } from "@/data/homePageData";
-
+import styles from "./NavBar.module.css";
 export function NavBar() {
   return (
-    <header className=" site-header " aria-label="Główna nawigacja">
+    <header className={styles.siteHeader} aria-label="Główna nawigacja">
       <a className="brand" href="#" aria-label="uniCheat home">
         <span>uC</span>
         <strong>uniCheat</strong>
@@ -14,7 +14,7 @@ export function NavBar() {
           </a>
         ))}
       </nav>
-      <a className="header-action" href="#start">
+      <a className={styles.headerAction} href="#start">
         Dołącz
       </a>
     </header>

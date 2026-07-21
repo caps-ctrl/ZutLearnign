@@ -1,0 +1,49 @@
+.networkPacket {
+  filter: drop-shadow(0 1px 2px rgba(6, 78, 59, 0.55))
+    drop-shadow(0 0 7px rgba(16, 185, 129, 0.65));
+}
+
+.networkPacketPulse {
+  animation: networkPacketPulse 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.networkPacketHalo {
+  fill: rgba(16, 185, 129, 0.24);
+  stroke: rgba(5, 150, 105, 0.6);
+  stroke-width: 0.7;
+}
+
+.networkPacketBody {
+  fill: #059669;
+  stroke: #065f46;
+  stroke-width: 0.9;
+}
+
+.networkPacketMark {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.8;
+}
+
+@keyframes networkPacketPulse {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .networkPacket {
+    display: none;
+  }
+}
