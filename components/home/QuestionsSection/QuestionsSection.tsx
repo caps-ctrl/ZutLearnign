@@ -35,7 +35,7 @@ export function QuestionsSection() {
 
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
           <Link
-            href="/faq"
+            href="/Faq"
             className="inline-flex min-h-13 items-center justify-center gap-3 rounded-xl px-6 font-extrabold text-emerald-950 transition hover:-translate-y-0.5 hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950"
           >
             Przejdź do FAQ

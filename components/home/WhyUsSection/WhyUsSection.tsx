@@ -1,5 +1,5 @@
 import { List } from "@/components/ui/List";
-import { benefits } from "@/data/homePageData";
+import { benefits } from "@/data/home/homePageData";
 import { StudentNetwork } from "./StudentNetwork";
 
 export function WhyUsSection() {
@@ -125,10 +125,13 @@ export function WhyUsSection() {
                 <div className="rounded-xl border border-white/15 bg-emerald-950/35 p-3">
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-sm font-bold text-white">Bazy danych</p>
-                    <span className="text-[11px] text-emerald-200">12 min temu</span>
+                    <span className="text-[11px] text-emerald-200">
+                      12 min temu
+                    </span>
                   </div>
                   <p className="mt-1 text-xs leading-5 text-emerald-100/85">
-                    Warto powtórzyć JOIN-y i normalizację — podobno będą kluczowe.
+                    Warto powtórzyć JOIN-y i normalizację — podobno będą
+                    kluczowe.
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/15 bg-emerald-950/35 p-3">
@@ -136,7 +139,9 @@ export function WhyUsSection() {
                     <p className="text-sm font-bold text-white">
                       Analiza matematyczna
                     </p>
-                    <span className="text-[11px] text-emerald-200">1 godz. temu</span>
+                    <span className="text-[11px] text-emerald-200">
+                      1 godz. temu
+                    </span>
                   </div>
                   <p className="mt-1 text-xs leading-5 text-emerald-100/85">
                     Na ćwiczeniach mocno zaznaczono granice ciągów i pochodne.

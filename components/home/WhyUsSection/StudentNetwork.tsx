@@ -1,6 +1,6 @@
 import { Icon } from "../../ui/Icon";
 import styles from "./whyUsSection.module.css";
-import { studentCards, positions } from "@/data/homePageData";
+import { studentCards, positions } from "@/data/home/homePageData";
 export function StudentNetwork() {
   return (
     <div
