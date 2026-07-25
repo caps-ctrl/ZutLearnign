@@ -1,5 +1,3 @@
-export const navItems = ["Wykładowcy", "Materiały", "Społeczność", "FAQ"];
-
 {
   /*-------------------------------------->why us section<-----------------------------------------------*/
 }

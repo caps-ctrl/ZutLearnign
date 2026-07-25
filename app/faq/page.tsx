@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NavBar } from "@/components/layout/Navbar/NavBar";
 import FaqAccordion from "./FaqAccordion";
 import RocketScrollAnimation from "./RocketScrollAnimation";
 
@@ -71,25 +72,7 @@ export default function FaqPage() {
   return (
     <main className="min-h-screen bg-[#f7f9fc]   text-slate-950">
       <div className="mx-auto w-[min(1180px,calc(100%-32px))] py-6 sm:py-8">
-        <header className="flex min-h-16 bg-red-500 items-center justify-between gap-4 rounded-2xl border border-slate-200/80 bg-white/90 px-4 shadow-[0_18px_46px_rgba(31,46,77,0.08)] backdrop-blur sm:px-6">
-          <Link
-            href="/"
-            className="flex items-center gap-2.5"
-            aria-label="uniCheat — strona główna"
-          >
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-600 text-sm font-black text-white">
-              uC
-            </span>
-            <strong className="text-lg">uniCheat</strong>
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex min-h-10 items-center gap-2 rounded-lg px-3 text-sm font-bold text-slate-600 transition hover:bg-slate-100 hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-          >
-            <span aria-hidden="true">←</span>
-            Strona główna
-          </Link>
-        </header>
+        <NavBar variant="faq" />
         <div className="flex justify-evenly items-start  gap-10 xl:gap-16">
           <section aria-labelledby="faq-title" className=" py-16 sm:py-20">
             <div className="text-center">

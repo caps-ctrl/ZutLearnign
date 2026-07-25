@@ -635,12 +635,217 @@
   display: flex;
   align-items: center;
   gap: 13px;
-  margin-bottom: 22px;
 }
 
 .securityTitle > span {
   width: 40px;
   height: 40px;
+}
+
+.securityCardHeader,
+.sessionsHeading,
+.twoFactorContent,
+.sessionRow {
+  display: flex;
+  align-items: center;
+}
+
+.securityCardHeader,
+.sessionsHeading {
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.securityActionButton,
+.sessionTextButton,
+.endSessionButton {
+  border: 0;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.securityActionButton {
+  min-height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  padding: 0 14px;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.securityActionButton:hover {
+  background: #d1fae5;
+}
+
+.revealPanel {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #e2e8f0;
+  animation: security-reveal 220ms ease-out;
+}
+
+.revealPanel .formActions {
+  margin-top: 22px;
+  padding-top: 20px;
+}
+
+.securityStatus,
+.securityStatusActive {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.securityStatus {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.securityStatusActive {
+  background: #dcfce7;
+  color: #047857;
+}
+
+.twoFactorContent {
+  gap: 13px;
+  margin-top: 20px;
+  border-radius: 14px;
+  padding: 16px;
+  background: white;
+}
+
+.twoFactorContent > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.twoFactorContent > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.twoFactorContent strong,
+.sessionsHeading strong {
+  font-size: 14px;
+}
+
+.twoFactorContent p,
+.sessionsHeading p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.twoFactorContent > button {
+  flex: 0 0 auto;
+}
+
+.sessionTextButton {
+  padding: 7px 0;
+  background: transparent;
+  color: #047857;
+}
+
+.sessionTextButton:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sessionsList {
+  display: grid;
+  margin-top: 16px;
+  border-top: 1px solid #e8edf3;
+}
+
+.sessionRow {
+  gap: 13px;
+  min-height: 78px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.sessionRow:last-child {
+  border-bottom: 0;
+}
+
+.sessionIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.sessionInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.sessionInfo strong,
+.sessionInfo > span {
+  display: block;
+}
+
+.sessionInfo strong {
+  font-size: 13px;
+}
+
+.sessionInfo > span {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.currentBadge {
+  display: inline-flex;
+  margin-left: 8px;
+  border-radius: 999px;
+  padding: 3px 7px;
+  background: #dcfce7;
+  color: #047857;
+  font-size: 9px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+.endSessionButton {
+  display: inline-flex;
+  min-height: 38px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  border-radius: 9px;
+  padding: 0 11px;
+  background: transparent;
+  color: #64748b;
+}
+
+.endSessionButton:hover {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+@keyframes security-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dangerZone {
@@ -798,6 +1003,29 @@
     flex-direction: column;
   }
 
+  .securityCardHeader,
+  .sessionsHeading,
+  .twoFactorContent {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .securityActionButton,
+  .twoFactorContent > button {
+    width: 100%;
+  }
+
+  .sessionRow {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    padding: 14px 0;
+  }
+
+  .endSessionButton {
+    grid-column: 2;
+    justify-self: start;
+  }
+
   .formActions {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -821,6 +1049,8 @@
   .secondaryButton,
   .primaryButton,
   .dangerButton,
+  .securityActionButton,
+  .revealPanel,
   .switch,
   .switch::after,
   .toast {
