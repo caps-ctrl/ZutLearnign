@@ -1,17 +1,22 @@
 "use client";
+import type { ReactNode } from "react";
 import { ProfileForm } from "./components/ProfileForm/ProfileForn";
 import { NotificationsForm } from "./components/NotificationsForm/NotificationForm";
 import { SecurityForm } from "./components/SecurityForm/SecurityForm";
-import { BookOpen, Check, ChevronRight, LogOut } from "lucide-react";
-import Link from "next/link";
+import { BookOpen, Check, ChevronRight } from "lucide-react";
 import { FormEvent, useState } from "react";
 import styles from "./profile.module.css";
 import { navigation } from "@/data/profile/sideBarData";
-import { NavBar } from "@/components/layout/Navbar/NavBar";
 
 type Section = "profile" | "notifications" | "security";
 
-export default function ProfileSettings() {
+type ProfileSettingsProps = {
+  navigationBar: ReactNode;
+};
+
+export default function ProfileSettings({
+  navigationBar,
+}: ProfileSettingsProps) {
   const [section, setSection] = useState<Section>("profile");
   const [saved, setSaved] = useState(false);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
@@ -25,7 +30,7 @@ export default function ProfileSettings() {
   return (
     <main className={styles.page}>
       <div className={styles.shell}>
-        <NavBar />
+        {navigationBar}
 
         <section className={styles.hero} aria-labelledby="profile-title">
           <div className={styles.heroCopy}>
