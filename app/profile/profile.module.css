@@ -426,6 +426,20 @@
   display: block;
 }
 
+.profileDetail a {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 7px;
+  overflow-wrap: anywhere;
+  color: #047857;
+  text-decoration: none;
+}
+
+.profileDetail a:hover {
+  text-decoration: underline;
+}
+
 .profileDetail > span {
   margin-bottom: 7px;
   color: #94a3b8;
@@ -460,6 +474,36 @@
   font-size: 10px;
   font-weight: 800;
   vertical-align: middle;
+}
+
+.visibilityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 9px;
+  border-radius: 999px;
+  padding: 3px 7px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+.interestList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.interestList span {
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 750;
 }
 
 .field {
@@ -514,6 +558,43 @@
 
 .fullWidth {
   grid-column: 1 / -1;
+}
+
+.privacyField {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fbfdff;
+}
+
+.privacyIcon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.privacyCopy {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+}
+
+.privacyCopy strong {
+  font-size: 13px;
+}
+
+.privacyCopy small {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 .inputWithIcon {

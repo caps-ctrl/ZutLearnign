@@ -72,6 +72,7 @@ export async function register(
   formData: FormData,
 ): Promise<AuthState> {
   const result = registerSchema.safeParse({
+    userName: fieldValue(formData, "userName"),
     firstName: fieldValue(formData, "firstName"),
     lastName: fieldValue(formData, "lastName"),
     email: fieldValue(formData, "email"),
@@ -84,7 +85,7 @@ export async function register(
     return validationFailure(result.error.flatten().fieldErrors);
   }
 
-  const { firstName, lastName, email, password } = result.data;
+  const { userName, firstName, lastName, email, password } = result.data;
   const requestHeaders = await headers();
   const origin =
     process.env.NEXT_PUBLIC_SITE_URL ??
@@ -99,6 +100,7 @@ export async function register(
         first_name: firstName,
         last_name: lastName,
         full_name: `${firstName} ${lastName}`,
+        userName: `${userName}`,
       },
       emailRedirectTo: `${origin}/auth/confirm?next=/profile`,
     },

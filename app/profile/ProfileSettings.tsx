@@ -1,28 +1,52 @@
 "use client";
-import type { ReactNode } from "react";
-import { ProfileForm } from "./components/ProfileForm/ProfileForn";
+
+import { ProfileForm } from "./components/ProfileForm/ProfileForm";
 import { NotificationsForm } from "./components/NotificationsForm/NotificationForm";
 import { SecurityForm } from "./components/SecurityForm/SecurityForm";
 import { BookOpen, Check, ChevronRight } from "lucide-react";
 import { FormEvent, useState } from "react";
 import styles from "./profile.module.css";
 import { navigation } from "@/data/profile/sideBarData";
-
-type Section = "profile" | "notifications" | "security";
-
-type ProfileSettingsProps = {
-  navigationBar: ReactNode;
-};
+import type { Section, ProfileData, ProfileSettingsProps } from "./types";
 
 export default function ProfileSettings({
   navigationBar,
+  data,
 }: ProfileSettingsProps) {
   const [section, setSection] = useState<Section>("profile");
   const [saved, setSaved] = useState(false);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [profile, setProfile] = useState<ProfileData>(data);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSaved(true);
+    window.setTimeout(() => setSaved(false), 2400);
+  }
+
+  function handleProfileSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    setProfile({
+      full_name: String(formData.get("firstName") ?? ""),
+      username: String(formData.get("username") ?? ""),
+      course: String(formData.get("course") ?? ""),
+      semester: String(formData.get("semester") ?? ""),
+      faculty: String(formData.get("faculty") ?? ""),
+      interests: String(formData.get("interests") ?? "")
+        .split(",")
+        .map((interest) => interest.trim())
+        .filter(Boolean),
+
+      avatar_url: String(formData.get("avatarUrl") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      githubUrl: String(formData.get("githubUrl") ?? ""),
+      linkedinUrl: String(formData.get("linkedinUrl") ?? ""),
+      bio: String(formData.get("bio") ?? ""),
+      isPrivate: formData.get("isPrivate") === "on",
+    });
+    setIsEditingProfile(false);
     setSaved(true);
     window.setTimeout(() => setSaved(false), 2400);
   }
@@ -42,11 +66,14 @@ export default function ProfileSettings({
           </div>
           <div className={styles.profileSummary}>
             <div className={styles.avatar} aria-hidden="true">
-              JK
+              {profile.avatar_url ?? profile.username[0]}
             </div>
             <div>
-              <strong>Jan Kowalski</strong>
-              <span>Informatyka · 3 semestr</span>
+              <strong>{profile.full_name}</strong>
+
+              {profile.semester !== null && (
+                <span>{profile.semester} semestr</span>
+              )}
             </div>
           </div>
         </section>
@@ -98,13 +125,11 @@ export default function ProfileSettings({
           <section className={styles.content} aria-live="polite">
             {section === "profile" && (
               <ProfileForm
+                profile={profile}
                 isEditing={isEditingProfile}
                 onEdit={() => setIsEditingProfile(true)}
                 onCancel={() => setIsEditingProfile(false)}
-                onSubmit={(event) => {
-                  handleSubmit(event);
-                  setIsEditingProfile(false);
-                }}
+                onSubmit={handleProfileSubmit}
               />
             )}
             {section === "notifications" && (
