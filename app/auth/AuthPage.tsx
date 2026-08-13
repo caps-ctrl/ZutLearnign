@@ -68,21 +68,19 @@ export default function AuthPage({ mode }: AuthPageProps) {
               {!isLogin && (
                 <div>
                   <label className={styles.field}>
-                    <span className={styles.label}>Adres e-mail</span>
+                    <span className={styles.label}>Nazwa użytkownika</span>
                     <input
                       className={`${styles.input} ${state.errors?.userName ? styles.inputError : ""}`}
-                      name="username"
+                      name="userName"
                       type="text"
                       autoComplete="username"
                       placeholder="nazwa uzytkownika"
                       aria-invalid={Boolean(state.errors?.userName)}
                       aria-describedby={
-                        state.errors?.userName
-                          ? "Nazwa juz jest zajeta"
-                          : undefined
+                        state.errors?.userName ? "userName-error" : undefined
                       }
                     />
-                    <FieldError errors={state.errors} field="email" />
+                    <FieldError errors={state.errors} field="userName" />
                   </label>
                   <div className={styles.fieldRow}>
                     <label className={styles.field}>

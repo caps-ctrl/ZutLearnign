@@ -86,6 +86,7 @@ export async function register(
   }
 
   const { userName, firstName, lastName, email, password } = result.data;
+
   const requestHeaders = await headers();
   const origin =
     process.env.NEXT_PUBLIC_SITE_URL ??
@@ -100,7 +101,7 @@ export async function register(
         first_name: firstName,
         last_name: lastName,
         full_name: `${firstName} ${lastName}`,
-        userName: `${userName}`,
+        username: `${userName}`,
       },
       emailRedirectTo: `${origin}/auth/confirm?next=/profile`,
     },
